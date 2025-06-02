@@ -1,38 +1,18 @@
-import { FaStar } from "react-icons/fa";
+import ProductDescription from "./ProductDescription";
+import ProductPicture from "./ProductPicture";
+import ProductPrice from "./ProductPrice";
 
-const ProductElment = ({ element }) => {
+const ProductElement = ({ elementMeals, index }) => {
   return (
-    <div className="products-detail-box">
-      {element.meals.map((elementMeals, index) => {
-        return (
-          <div key={index}>
-            <article>
-              <h3>{elementMeals.title}</h3>
-              {elementMeals.description && (
-                <p className="produt-description">{elementMeals.description}</p>
-              )}
-
-              <div className="price-box">
-                <p className="price">{elementMeals.price} €</p>
-                <div className="populaire">
-                  {elementMeals.popular && (
-                    <p>
-                      <span>★</span> Populaire
-                    </p>
-                  )}
-                </div>
-              </div>
-            </article>
-            {elementMeals.picture && (
-              <div className="main-product-img-box">
-                <img src={elementMeals.picture} alt="image de repas" />
-              </div>
-            )}
-          </div>
-        );
-      })}
+    <div key={index}>
+      <article>
+        <h3>{elementMeals.title}</h3>
+        <ProductDescription elementMeals={elementMeals} />
+        <ProductPrice elementMeals={elementMeals} />
+      </article>
+      <ProductPicture elementMeals={elementMeals} />
     </div>
   );
 };
 
-export default ProductElment;
+export default ProductElement;

@@ -5,15 +5,14 @@ import "./assets/Main/Main.css";
 import "./assets/Footer/Footer.css";
 import Footer from "./assets/Footer/Footer";
 import axios from "axios";
-
+import icon from "./assets/img/favicon.ico";
 import { useState, useEffect } from "react";
-import ProductElment from "./assets/Main/ProductElement";
+import SectionTop from "./assets/Main/SectionTop";
+import SectionBottom from "./assets/Main/SectionBottom";
 
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
-  console.log(data.categories);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,50 +32,17 @@ function App() {
 
   return (
     <>
-      <Header
-        title="deliveroo"
-        icon="https://lereacteur-react-deliveroo.netlify.app/favicon.ico"
-      />
+      <Header title="deliveroo" icon={icon} />
       <main>
         {isLoading ? (
           <p>Loading...</p>
         ) : (
           <>
-            <section className="section-top">
-              <div>
-                <h1>{data.restaurant.name}</h1>
-                <p>{data.restaurant.description}</p>
-              </div>
-              <div className="section-top-img-box">
-                <img
-                  src={data.restaurant.picture}
-                  alt="Bon déjeuner végétarien"
-                />
-              </div>
-            </section>
-            <section className="section-bottom container">
-              <div className="global-products-box">
-                {data.categories.map((element, index) => {
-                  if (element.meals.length !== 0) {
-                    return (
-                      <div key={index} className="type-of-product-box">
-                        <h2>{element.name}</h2>
-                        <ProductElment element={element} />
-                      </div>
-                    );
-                  }
-                })}
-              </div>
-              <form className="basket">
-                <button>Valider mon panier</button>
-
-                <div className="product-choice-list">Votre panier est vide</div>
-              </form>
-            </section>
+            <SectionTop data={data} />
+            <SectionBottom data={data} />
           </>
         )}
       </main>
-
       <Footer />
     </>
   );
