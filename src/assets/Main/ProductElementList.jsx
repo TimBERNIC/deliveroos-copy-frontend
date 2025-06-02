@@ -1,5 +1,4 @@
-import { FaStar } from "react-icons/fa";
-import ProductElement from "./ProductElement";
+import ProductElement from "./Products/ProductElement";
 
 const ProductElementList = ({ element }) => {
   return (
