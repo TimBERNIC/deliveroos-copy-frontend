@@ -1,3 +1,8 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f5f5;
+}
+
+.container {
+  margin: 0 30px;
 }

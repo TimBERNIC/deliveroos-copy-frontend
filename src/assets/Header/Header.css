@@ -4,6 +4,7 @@ header {
   align-items: center;
   padding: 10px 30px 5px;
   border-bottom: rgb(225, 225, 225) solid 1px;
+  background-color: white;
 }
 
 header > div {
