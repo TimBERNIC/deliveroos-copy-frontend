@@ -56,16 +56,22 @@ function App() {
             </section>
             <section className="section-bottom container">
               <div className="global-products-box">
-                {data.categories.map((element) => {
-                  return (
-                    <div className="type-of-product-box">
-                      <h2>{element.name}</h2>
-                      <ProductElment element={element} />
-                    </div>
-                  );
+                {data.categories.map((element, index) => {
+                  if (element.meals.length !== 0) {
+                    return (
+                      <div key={index} className="type-of-product-box">
+                        <h2>{element.name}</h2>
+                        <ProductElment element={element} />
+                      </div>
+                    );
+                  }
                 })}
               </div>
-              <div className="basket"></div>
+              <form className="basket">
+                <button>Valider mon panier</button>
+
+                <div className="product-choice-list">Votre panier est vide</div>
+              </form>
             </section>
           </>
         )}

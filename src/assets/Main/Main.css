@@ -30,6 +30,10 @@ h1 {
   width: 100%;
   border-radius: 5px;
 }
+.section-bottom {
+  display: flex;
+  justify-content: space-between;
+}
 
 h2 {
   font-size: 24px;
@@ -58,7 +62,6 @@ h2 {
 .type-of-product-box {
   display: flex;
   flex-direction: column;
-  border: #868a8a solid 2px;
 }
 .products-detail-box {
   display: flex;
@@ -76,6 +79,11 @@ h2 {
   border-radius: 5px;
   background-color: white;
   padding: 20px;
+}
+.products-detail-box > div:hover {
+  transition: 0.7s;
+  box-shadow: 0px 23px 50px 18px rgba(211, 211, 211, 0.34);
+  cursor: pointer;
 }
 
 .products-detail-box > div > article {
@@ -122,4 +130,41 @@ h3 {
 }
 .populaire > p > span {
   font-size: 20px;
+}
+
+.basket {
+  position: sticky;
+  top: 0;
+  width: 350px;
+  height: 248px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.basket > button {
+  width: 330px;
+  margin: 10px;
+  padding: 16px;
+  background-color: #bac3c3;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: #8b9a9b;
+}
+.product-choice-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 330px;
+  margin: 10px;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+
+  color: #8b9a9b;
 }

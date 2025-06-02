@@ -3,9 +3,9 @@ import { FaStar } from "react-icons/fa";
 const ProductElment = ({ element }) => {
   return (
     <div className="products-detail-box">
-      {element.meals.map((elementMeals) => {
+      {element.meals.map((elementMeals, index) => {
         return (
-          <div>
+          <div key={index}>
             <article>
               <h3>{elementMeals.title}</h3>
               {elementMeals.description && (
@@ -14,13 +14,13 @@ const ProductElment = ({ element }) => {
 
               <div className="price-box">
                 <p className="price">{elementMeals.price} €</p>
-                <p className="populaire">
+                <div className="populaire">
                   {elementMeals.popular && (
                     <p>
                       <span>★</span> Populaire
                     </p>
                   )}
-                </p>
+                </div>
               </div>
             </article>
             {elementMeals.picture && (
