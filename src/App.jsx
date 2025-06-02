@@ -4,15 +4,14 @@ import Header from "./assets/Header/Header";
 import "./assets/Main/Main.css";
 import "./assets/Footer/Footer.css";
 import Footer from "./assets/Footer/Footer";
-
 import axios from "axios";
 import { useState, useEffect } from "react";
 
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  console.log(data);
 
+  console.log(data);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,6 +24,7 @@ function App() {
         console.log(message.error);
       }
     };
+
     fetchData();
   }, []);
 
