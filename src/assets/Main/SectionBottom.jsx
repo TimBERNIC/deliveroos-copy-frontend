@@ -1,4 +1,4 @@
-import ProductElementList from "./ProductElementList";
+import ProductElement from "./Products/ProductElement";
 import Basket from "./Basket";
 
 const SectionBottom = ({ data }) => {
@@ -10,7 +10,16 @@ const SectionBottom = ({ data }) => {
             return (
               <div key={element.name + index} className="type-of-product-box">
                 <h2>{element.name}</h2>
-                <ProductElementList element={element} />
+                <div className="products-detail-box">
+                  {element.meals.map((elementMeals, index) => {
+                    return (
+                      <ProductElement
+                        elementMeals={elementMeals}
+                        index={index}
+                      />
+                    );
+                  })}
+                </div>
               </div>
             );
           }
