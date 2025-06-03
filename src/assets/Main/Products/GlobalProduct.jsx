@@ -1,11 +1,18 @@
 import ProductElement from "./ProductElement";
-const GlobalProduct = ({ element, index }) => {
+const GlobalProduct = ({ element, basketTab, setBasketTab }) => {
   return (
-    <div className="type-of-product-box" key={index}>
+    <div className="type-of-product-box">
       <h2>{element.name}</h2>
       <div className="products-detail-box">
-        {element.meals.map((elementMeals, index) => {
-          return <ProductElement elementMeals={elementMeals} index={index} />;
+        {element.meals.map((elementMeals) => {
+          return (
+            <ProductElement
+              key={elementMeals.id}
+              elementMeals={elementMeals}
+              basketTab={basketTab}
+              setBasketTab={setBasketTab}
+            />
+          );
         })}
       </div>
     </div>

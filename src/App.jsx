@@ -13,6 +13,7 @@ import SectionBottom from "./assets/Main/SectionBottom";
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [basketTab, setBasketTab] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,7 +40,11 @@ function App() {
         ) : (
           <>
             <SectionTop data={data} />
-            <SectionBottom data={data} />
+            <SectionBottom
+              data={data}
+              basketTab={basketTab}
+              setBasketTab={setBasketTab}
+            />
           </>
         )}
       </main>
