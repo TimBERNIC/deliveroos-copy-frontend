@@ -155,13 +155,14 @@ h3 {
   position: sticky;
   top: 0;
   width: 350px;
+  min-height: 200px;
   height: 25%;
   background-color: white;
   border-radius: 5px;
   margin: 20px;
 }
 
-.basket > button {
+.valid-button-open {
   width: 330px;
   margin: 10px;
   padding: 16px;
@@ -174,10 +175,28 @@ h3 {
   color: #ffffff;
 }
 
+.valid-button-shut {
+  width: 330px;
+  margin: 10px;
+  padding: 16px;
+  background-color: #828282;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: #393939;
+  opacity: 0.5;
+}
+.valid-button-shut:hover {
+  cursor: not-allowed;
+}
+
 .empty-basket-box {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 40px 0px;
 }
 .product-choice-list {
   display: flex;
@@ -253,6 +272,7 @@ h3 {
   border-top: solid rgb(186, 186, 186) 1px;
   border-bottom: solid rgb(186, 186, 186) 1px;
   padding: 20px 0;
+  margin-top: 20px;
 }
 
 .total-article-box,

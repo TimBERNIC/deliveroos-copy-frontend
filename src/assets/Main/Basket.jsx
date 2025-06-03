@@ -9,7 +9,12 @@ const Basket = ({ basketTab, setBasketTab }) => {
 
   return (
     <div className="basket">
-      <button>Valider mon panier</button>
+      <button
+        className={
+          basketTab.length === 0 ? "valid-button-shut" : "valid-button-open"
+        }>
+        Valider mon panier
+      </button>
 
       {basketTab.length === 0 ? (
         <div className="empty-basket-box">Votre panier est vide</div>
