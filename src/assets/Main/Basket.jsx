@@ -2,8 +2,9 @@ import { useEffect } from "react";
 
 const Basket = ({ basketTab, setBasketTab }) => {
   const totalBasketPrice = basketTab.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue.total;
+    return accumulator + currentValue.price * currentValue.quantity;
   }, 0);
+  console.log(basketTab);
 
   const deliveryCosts = 2.5;
 
