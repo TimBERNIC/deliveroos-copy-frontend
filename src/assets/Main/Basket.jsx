@@ -68,7 +68,7 @@ const Basket = ({ basketTab, setBasketTab }) => {
           <div className="details-basket">
             <div className="total-article-box">
               <span>Sous-total</span>
-              <span>{totalBasketPrice} €</span>
+              <span>{totalBasketPrice.toFixed(2)} €</span>
             </div>
             <div className="delivery-costs-box">
               <span>Frais de Livraison</span>
@@ -77,7 +77,7 @@ const Basket = ({ basketTab, setBasketTab }) => {
           </div>
           <div className="total-price-box">
             <span>Total</span>
-            <span>{totalBasketPrice + deliveryCosts} €</span>
+            <span>{(totalBasketPrice + deliveryCosts).toFixed(2)} €</span>
           </div>
 
           {/* ICI */}
