@@ -1,3 +1,4 @@
+import { FcPrevious } from "react-icons/fc";
 import ProductDescription from "./ProductDescription";
 import ProductPicture from "./ProductPicture";
 import ProductPrice from "./ProductPrice";
@@ -15,7 +16,6 @@ const ProductElement = ({ elementMeals, basketTab, setBasketTab }) => {
         } else {
           copy.push({
             ...elementMeals,
-            total: Number(elementMeals.price),
             quantity: 1,
           });
         }

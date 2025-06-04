@@ -51,7 +51,6 @@ const Basket = ({ basketTab, setBasketTab }) => {
                         copyTab[index].price * copyTab[index].quantity;
 
                       setBasketTab(copyTab);
-                      console.log(element.total);
                     }}>
                     +
                   </button>
@@ -60,7 +59,7 @@ const Basket = ({ basketTab, setBasketTab }) => {
                   {element && element.title}
                 </div>
                 <div className="total-price-element-box">
-                  {element && element.total.toFixed(2)} €
+                  {(element.quantity * element.price).toFixed(2)} €
                 </div>
               </article>
             );
